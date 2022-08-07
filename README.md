@@ -1,4 +1,4 @@
-# bank-service Project
+# Bank Service Project
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
@@ -53,20 +53,6 @@ You can then execute your native executable with: `./target/bank-service-1.0-SNA
 
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
 
-## Related Guides
+## Further Notes
 
-- Minikube ([guide](https://quarkus.io/guides/kubernetes)): Generate Minikube resources from annotations
-- Hibernate Validator ([guide](https://quarkus.io/guides/validation)): Validate object properties (field, getter) and
-  method parameters for your beans (REST, CDI, JPA)
-- RESTEasy Classic JSON-B ([guide](https://quarkus.io/guides/rest-json)): JSON-B serialization support for RESTEasy
-  Classic
-- Kubernetes Config ([guide](https://quarkus.io/guides/kubernetes-config)): Read runtime configuration from Kubernetes
-  ConfigMaps and Secrets
-
-## Provided Code
-
-### RESTEasy JAX-RS
-
-Easily start your RESTful Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
+- [Notes](NOTES.md)
