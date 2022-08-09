@@ -16,3 +16,24 @@ As for Spring Boot, Microprofile supports the definition of configuration values
 - Kubernetes Config Maps
 - `application.yml`
 - `application.properties`
+
+## Quarkus Profiles
+
+Quarkus configuration builds on top of `smallrye/microprofile` adding three profiles:
+
+- `dev`: activated when running the application with `mvnw quarkus:dev`
+- `test`: activated when running the tests
+- `prod`: activated when running neither the `dev` and `test` profiles are active
+
+To use specific configuration values for specific profiles the configuration must be prepended with the `%profile.`.
+For example:
+
+```properties
+# This value is a fallback value used when running the tests for example as no specific value for the property has been
+# specified in that case
+bank.name=Local Bank
+%dev.bank.name=Dev Bank
+%prod.bank.name=The real Bank
+```
+
+To activate a specific profile the `-Dquarkus.profile` property (or `QUARKUS_PROFILE` environment variable) can be set.  

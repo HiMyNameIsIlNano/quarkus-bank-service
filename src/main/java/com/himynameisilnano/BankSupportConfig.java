@@ -6,7 +6,7 @@ import org.eclipse.microprofile.config.inject.ConfigProperties;
 public class BankSupportConfig {
     private String phone;
 
-    String email;
+     String email;
 
     public String getPhone() {
         return phone;

@@ -37,7 +37,7 @@ public class BankResource {
     }
 
     @GET
-    @Path("/suport")
+    @Path("/support")
     @Produces(MediaType.APPLICATION_JSON)
     public Map<String, String> getSupport() {
         return Map.of(
