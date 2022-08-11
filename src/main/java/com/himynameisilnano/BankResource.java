@@ -3,6 +3,7 @@ package com.himynameisilnano;
 import org.eclipse.microprofile.config.inject.ConfigProperties;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
+import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -22,6 +23,9 @@ public class BankResource {
     @ConfigProperties(prefix = "bank-support")
     BankSupportConfig supportConfig;
 
+    @Inject
+    BankBusinessSupport businessSupport;
+
     @GET
     @Path("/name")
     @Produces(MediaType.TEXT_PLAIN)
@@ -37,12 +41,22 @@ public class BankResource {
     }
 
     @GET
-    @Path("/support")
+    @Path("/technical/support")
     @Produces(MediaType.APPLICATION_JSON)
-    public Map<String, String> getSupport() {
+    public Map<String, String> getTechnicalSupport() {
         return Map.of(
                 "email", supportConfig.email,
                 "phone", supportConfig.getPhone()
+        );
+    }
+
+    @GET
+    @Path("business/support")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Map<String, String> getBusinessSupport() {
+        return Map.of(
+                "email", businessSupport.business().email(),
+                "phone", businessSupport.business().phone()
         );
     }
 }

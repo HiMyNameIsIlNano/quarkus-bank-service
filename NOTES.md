@@ -36,4 +36,11 @@ bank.name=Local Bank
 %prod.bank.name=The real Bank
 ```
 
-To activate a specific profile the `-Dquarkus.profile` property (or `QUARKUS_PROFILE` environment variable) can be set.  
+To activate a specific profile the `-Dquarkus.profile` property (or `QUARKUS_PROFILE` environment variable) can be set.
+
+## Buildtime Properties VS Runtime Properties
+
+Some properties are immutable values that are compiled into the build artifact and never change (e.g. the DB Driver to use). If one tries
+to change this value the change will not be picked up as those are immutable. Other properties like for example a DB Url in a runtime property
+and can be changed at any given time. Quarkus differentiates these two different types of properties and they get to be shown in the documentation
+with a special icon in the form of a small lock icon. 
